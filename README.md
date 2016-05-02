@@ -38,6 +38,9 @@ dd . . .        # delete current line and repeat last change (so simple)...
 *               # search the word under cursor
 cw              # delete curren word and put into insert mode
 * cwreplace<Esc> n.n.n.n.n. # replace one by one of current word as replace
+db              # delete backward
+dw              # delete forward
+b dw            # move to beginning of word and delete forward
 ```
 
 ## Learning stuff
