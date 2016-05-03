@@ -29,12 +29,19 @@ vim -u NONE -N
 :h .
 
 
+v{motion}d|y    # cut or copy selection
+P               # paste before the cursor
+
+
+
 u               # undo the last change
+Ctrl+r          # redo
 .               # repeat the last change(cmd) (could be char/word/line/file), replay last keystroke
 dd              # delete current line
 dd . . .        # delete current line and repeat last change (so simple)...
 >G              # increase the indentation from current line to end of file
 <G
+/search         # search for 'search', N->previous, n->forward
 :%s/content/copy/g  # replace content as copy for all lines
 *               # search the word under cursor
 cw              # delete curren word and put into insert mode
@@ -47,6 +54,7 @@ db              # delete backward
 dw              # delete forward
 daw             # delete current word
 dap             # delete a paragraph
+dG              # delete from current line to end of file
 b dw            # move to beginning of word and delete forward
 d2w | 2dw | dw. # delete 2 words
 uu | 2u         # undo twice
@@ -100,6 +108,16 @@ gUl
 # address could be modified with offset
 :/commands/+1,/motion/-2p
 :.,.+3p
+
+
+
+
+# read content from file and paste here
+:read file
+:read !ls
+
+# switch to location of last edit
+g
 ```
 
     c{motion}
