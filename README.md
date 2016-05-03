@@ -74,6 +74,32 @@ gUl
 :7d             # more to line 7 then delete that line
 7G dd           # move to line 7 then delete that line
 :2,5p           # print line 2 to 5
+
+
+# . means current line
+:.,$p           # print current line to end of file
+
+# % means all lines in current file
+:%p             # print all lines in current file 
+:1,$p
+
+
+:%s/old/new     # replace first occurence of 'old' with 'new' in each line
+
+
+# virtual selection then :
+:'<,'>p
+# '< means first line of most recent selection
+# '> means last line of most recent selection
+
+
+# Ex commands can accept regex as address
+:/<html>/,/<\/html>/p
+:/start_pattern/,/end_pattern/{cmd}
+
+# address could be modified with offset
+:/commands/+1,/motion/-2p
+:.,.+3p
 ```
 
     c{motion}
