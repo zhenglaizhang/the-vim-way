@@ -11,6 +11,7 @@ This is SOME text
 This is SOME text
 This is SOME text
 This is SOME text
+This is SOME text
 
 
 
@@ -37,16 +38,53 @@ dd . . .        # delete current line and repeat last change (so simple)...
 :%s/content/copy/g  # replace content as copy for all lines
 *               # search the word under cursor
 cw              # delete curren word and put into insert mode
+cW
+c3w             # change the 3 words
 * cwreplace<Esc> n.n.n.n.n. # replace one by one of current word as replace
+b               # back to word's beginning
+w               # forward to next word's beginning
 db              # delete backward
 dw              # delete forward
+daw             # delete current word
+dap             # delete a paragraph
 b dw            # move to beginning of word and delete forward
+d2w | 2dw | dw. # delete 2 words
+uu | 2u         # undo twice
+
+g~              # swap cases
+gu              # make lower case
+gU              # make upper case
+
+
+<               # shift left
+>               # shift right
+=               # auto indent
+
+guap
+gUaw
+gul
+gUl
+
+
+:14             # jump to line 14
+:$              # jump to end of file
+:print | :p     # print current line
+:15p            # move cursor to line 15 and echo that line
+
+:7d             # more to line 7 then delete that line
+7G dd           # move to line 7 then delete that line
+:2,5p           # print line 2 to 5
 ```
+
+    c{motion}
+    y{motion}
+    d{motion}
 
 ## Learning stuff
 
 * Vim tutor
 * Vim SOME
+* Vim Golf score
 
 
 ## Tips
