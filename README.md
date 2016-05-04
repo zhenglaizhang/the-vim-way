@@ -120,6 +120,45 @@ gUl
 g
 ```
 
+### Files
+
+* buffer
+* workspace
+
+```bash
+vim *.txt
+:ls
+:args
+
+:bnext
+:bprevious
+:bp
+:b{number}
+# Note that deleting a buffer has no effect on its associated file; it simply removes the in-memory representation.
+:bdelete N1 N2 N3
+:N,M bdelete
+:1,10bd
+:bd 5 6 7 9 10
+
+
+# show args passed to vim, and it can be reset
+:args
+# set args, and open the args as the order specified
+:args file1 file2 file3
+
+# open files with glob
+:args *.js
+# ** means zero or more chars, but also recursive dirs
+:args **/*.js
+:args **/*.*
+:args **/*.js **/**.css
+
+# open files named in files.txt by backtick expansion
+:args `cat files.txt`
+```
+
+
+
     c{motion}
     y{motion}
     d{motion}
