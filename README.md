@@ -155,8 +155,55 @@ vim *.txt
 
 # open files named in files.txt by backtick expansion
 :args `cat files.txt`
-```
 
+:bnext!     # force to goto next buffer
+:quit       # quit the vim
+:write      # write current buffer to file
+:edit!      # re-read from file to current buffer, discard any changes, revert changes
+:qall!      # quit all windows without reviewing their changes
+:wall!      # write all buffers to files
+:argdo write
+
+:first      # goto first buffer
+:last       # goto next buffes
+
+
+
+# Divide workspace into windows
+<C-w>s
+<C-w>v
+:edit new-file
+
+# split and load file in new window
+:sp[lit] {file}
+:vsp[lit] {file}
+
+# Cycle between windows
+<C-w>w      # oe <C-w><C-w>
+
+# navigate windows
+<C-w>h
+<C-w>j
+<C-w>k
+<C-w>l
+
+<C-w>c  # close active window
+:clo[se]
+
+<C-w>o  # keep only active window, keep only the active window
+:on[ly]
+
+
+:pwd        # show current working directory
+:edit file  # edit full path file 
+
+:e %<Tab>   # % is shorthand for path of current active buffer
+:e %:h<Tab> # :h modifier removes the file name only
+:edit %:h<Tab>M<Tab><Tab>
+
+:find {file}# find based on file name only
+:set path+=app/** # add all sub dirs under app to find path
+```
 
 
     c{motion}
